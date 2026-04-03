@@ -20,6 +20,7 @@ my-code-agent-skills/
 
 ## Key Conventions
 
+- **Commit messages must not contain any AI assistant attribution** (no `Co-Authored-By: Claude`, `Generated with Claude Code`, or similar). Keep commit messages clean and descriptive.
 - All publishable skills live under `skills/`. Each skill gets its own subdirectory.
 - Every skill directory must contain a `SKILL.md` with at minimum:
   ```yaml
@@ -49,3 +50,28 @@ npx skills install github:<username>/my-code-agent-skills
 ```
 
 `npx skills` automatically discovers skills in the `skills/` directory by scanning for `SKILL.md` files.
+
+## Updating README.md
+
+Whenever a new skill is added (or an existing skill's description changes), update the Skills table in `README.md` to keep it in sync. The table is the single source of truth for users and code agents to discover what's available.
+
+## How code agents should use this repo
+
+This repo is designed to be read by **code agents** (like Claude Code). When a code agent encounters this repository, it should:
+
+1. **Read the Skills table in `README.md`** to discover available skills.
+2. **Present the skill list to the user** with each skill's name, description, and install command.
+3. **Let the user choose** whether to install all skills or a specific one.
+
+The code agent should present something like:
+
+```
+Available skills:
+  1. ansible-doc — Look up accurate Ansible module documentation...
+  2. ...
+
+Install all:  npx skills install github:Swind/my-code-agent-skills
+Install one:  npx skills install github:Swind/my-code-agent-skills --skill <name>
+```
+
+The agent should never guess at skill names — always read the README.md table first.
