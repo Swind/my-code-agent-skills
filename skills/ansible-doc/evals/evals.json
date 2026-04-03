@@ -1,0 +1,20 @@
+{
+  "skill_name": "ansible-doc",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write an Ansible task that creates a Linux user named 'deploy' with a specific UID of 1050, adds them to the 'docker' and 'sudo' groups, and sets a comment of 'Deploy User'. Make sure to use the correct parameter names.",
+      "expected_output": "A correct Ansible task using ansible.builtin.user with accurate parameter names (uid, groups, append, comment) verified against ansible-doc"
+    },
+    {
+      "id": 2,
+      "prompt": "I need to install Node.js packages from a package.json file in /opt/myapp using Ansible. Which module should I use and what does the task look like?",
+      "expected_output": "Uses ansible-doc to find the right module (community.general.npm), looks up correct parameters, writes accurate task"
+    },
+    {
+      "id": 3,
+      "prompt": "Write an Ansible playbook task that opens port 8080/tcp permanently in firewalld. I always forget if the parameter is 'port' or 'service' and what the zone syntax looks like.",
+      "expected_output": "Uses ansible-doc to look up ansible.posix.firewalld parameters, writes task with correct parameter names (port, zone, state, permanent)"
+    }
+  ]
+}

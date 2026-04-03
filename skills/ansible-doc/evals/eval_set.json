@@ -1,0 +1,82 @@
+[
+  {
+    "query": "I'm writing an Ansible playbook to set up our staging server and I need to create a task that manages systemd services. I keep mixing up the parameter names — is it 'name' or 'service_name'? And does it use 'state: started' or 'state: running'? Can you help me write this task properly for restarting nginx?",
+    "should_trigger": true
+  },
+  {
+    "query": "ok so i need to write an ansible task that copies a bunch of files from my local machine to the remote server, but i also need to set the owner and permissions. the files are in /opt/deploy/templates/ on my laptop and should go to /etc/myapp/ on the target. i want owner=myapp_user, group=myapp_group, mode=0644. can you check what the exact parameters are for the copy module?",
+    "should_trigger": true
+  },
+  {
+    "query": "hey I'm building an Ansible role for managing Docker containers on our production fleet. I need to pull an image, create a container with port mappings and volume mounts, and set restart policy. Which module handles this and what are all the parameters I need? I think it's something in community.docker but I'm not sure of the exact name.",
+    "should_trigger": true
+  },
+  {
+    "query": "I have this existing Ansible playbook that's been failing on one specific task. The error says 'unsupported parameter for module' — here's the task:\n\n```yaml\n- name: Install pip packages\n  pip:\n    name: flask\n    virtualenv: /opt/myapp/venv\n    virtualenv_command: /usr/bin/python3 -m venv\n    state: latest\n```\n\nI think some of these parameter names might be wrong for the current version. Can you check the correct parameters?",
+    "should_trigger": true
+  },
+  {
+    "query": "We're migrating our infrastructure to AWS and I need to write Ansible tasks for provisioning EC2 instances. I need to specify the instance type, AMI, security groups, and tags. I've never used the AWS modules before — can you find the right module and show me what parameters it accepts?",
+    "should_trigger": true
+  },
+  {
+    "query": "I want to register the output of an Ansible task and use the result in a conditional later. Specifically I'm using the stat module to check if a file exists and I need to know what fields are in the returned data — like is it .stat.exists or .exists? What exactly does stat return?",
+    "should_trigger": true
+  },
+  {
+    "query": "Can you write an Ansible task that adds an apt repository? I need to add the Node.js 18.x repo from nodesource. I always forget if it's apt_repository or apt_key or something else, and which parameters are required vs optional.",
+    "should_trigger": true
+  },
+  {
+    "query": "I need to review this Ansible playbook my coworker wrote. It uses community.general.npm to install frontend packages, but I want to verify the parameter names are correct before we merge it. Here's what they wrote:\n\n```yaml\n- community.general.npm:\n    path: /opt/frontend\n    production: yes\n    ci: true\n```\n\nCan you check if these parameters are right?",
+    "should_trigger": true
+  },
+  {
+    "query": "writing an ansible playbook to configure firewalld rules on our RHEL servers. need to open ports 80 and 443, enable http service, and set the default zone to public. what module do I use and what are the exact parameter names?",
+    "should_trigger": true
+  },
+  {
+    "query": "I need an Ansible task that uses the wait_for module to check if a service is listening on port 8443 before proceeding. What parameters does wait_for accept? Is it just 'port' or do I need 'host' too?",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm writing a Terraform module to provision AWS infrastructure. I need to create a VPC with public and private subnets, an internet gateway, and a NAT gateway. Can you help me structure the .tf files?",
+    "should_trigger": false
+  },
+  {
+    "query": "I need a Python script that automates server configuration — it should SSH into our servers, install packages, and set up users. Something like a lightweight alternative to Ansible since we only have 5 servers.",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you help me write a Kubernetes Deployment YAML for my Node.js app? It needs resource limits, liveness/readiness probes, and should mount a ConfigMap as environment variables.",
+    "should_trigger": false
+  },
+  {
+    "query": "I'm setting up a Docker Compose file for local development. I need a Postgres database, Redis cache, and my Node.js app service with hot-reload. Can you help me write the docker-compose.yml?",
+    "should_trigger": false
+  },
+  {
+    "query": "Our team uses Chef for configuration management and I need to write a recipe that installs and configures Nginx with custom templates. How do Chef resources work for package installation and file management?",
+    "should_trigger": false
+  },
+  {
+    "query": "I need to write a Jenkins pipeline (Jenkinsfile) that builds our app, runs tests, and deploys to staging. Can you help with the declarative pipeline syntax for parallel stages and post actions?",
+    "should_trigger": false
+  },
+  {
+    "query": "I need a bash script that hardens our Linux servers — disable unnecessary services, set file permissions, configure SSH settings, and set up automatic updates. Can you write something comprehensive?",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you explain YAML syntax to me? I keep getting indentation errors in my config files. What's the difference between mappings, sequences, and scalars? And when do I use a dash vs no dash?",
+    "should_trigger": false
+  },
+  {
+    "query": "I need to set up an Ansible inventory file for our environment. We have 3 web servers, 2 database servers, and 1 load balancer. How do I organize them into groups and set variables like ansible_host and ansible_user per host?",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you write a Makefile for our project that handles building, testing, linting, and cleaning? I want targets for 'make build', 'make test', 'make lint', and 'make clean' with proper dependencies.",
+    "should_trigger": false
+  }
+]
